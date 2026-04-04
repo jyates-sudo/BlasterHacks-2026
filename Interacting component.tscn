@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bjjathcxyyh3g"]
+
+[ext_resource type="Script" uid="uid://csnf0qxyca88v" path="res://interacting_component.gd" id="1_vn4g4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uuys"]
+size = Vector2(64, 64)
+
+[node name="Interacting" type="Node2D" unique_id=672020759]
+z_index = 10
+script = ExtResource("1_vn4g4")
+
+[node name="Interact Range" type="Area2D" parent="." unique_id=1098403715]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact Range" unique_id=1664905346]
+shape = SubResource("RectangleShape2D_2uuys")
+
+[node name="Label" type="Label" parent="." unique_id=702714758]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -54.0
+offset_right = 71.5
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Press E to interact"
+
+[connection signal="area_entered" from="Interact Range" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="Interact Range" to="." method="_on_interact_range_area_exited"]

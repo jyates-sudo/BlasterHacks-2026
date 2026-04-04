@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6pq5orpxkl4j" path="res://Entities and Sprites/Player/player_character.gd" id="1_6udhd"]
 [ext_resource type="Texture2D" uid="uid://c02gsg1f7ra7j" path="res://addons/2d_shapes/Ellipse.svg" id="2_gg5wi"]
+[ext_resource type="PackedScene" uid="uid://bjjathcxyyh3g" path="res://Interacting component.tscn" id="3_wee52"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5up26"]
 
@@ -17,3 +18,6 @@ position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_5up26")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=686921477]
+
+[node name="Interacting" parent="." unique_id=672020759 instance=ExtResource("3_wee52")]
+position = Vector2(0, -11)
