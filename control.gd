@@ -33,6 +33,8 @@ func _onTerminalDataSent(data: PackedByteArray) -> void:
 			terminal.write("\b \b")
 			cmdBuffer = cmdBuffer.substr(0, len(cmdBuffer)-1)
 			#terminal.clear()
+		
+			
 		_:
 			cmdBuffer += strData
 			terminal.write(strData)
@@ -45,8 +47,8 @@ func _onTerminalSizeChanged(newSize: Vector2i) -> void:
 
 func _checkCommand(input: String) -> void:
 	print("Checked: ", input)
-	if(cmd.has(input.strip_edges())):
-		cmd[input.strip_edges()].call()
+	if(cmd.has(input.strip_edges().to_lower())):
+		cmd[input.strip_edges().to_lower()].call()
 	else:
 		terminal.write(ESC + ERR + "\n\rInvalid Command. Try 'help'" + ESC + NORM)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,6 +60,7 @@ func _initCommands() -> void:
 	cmd["summon"] = _runSummon
 	cmd["bag"] = _runBag
 	cmd["run"] = _runRun
+	cmd["attack"] = _runAttack
 
 func _runHelp() -> void:
 	for c in cmd:
@@ -69,7 +72,11 @@ func _runSummon() -> void:
 func _runBag() -> void:
 	var bag = user._getBag()
 	for item in bag:
-		terminal.write("\n\r" + BAG + item + " -- " + bag[item] + NORM)
+		terminal.write("\n\r" + ESC + BAG + item + " -- " + bag[item] + ESC + NORM)
 
 func _runRun() -> void:
 	print("Run!")
+
+func _runAttack() -> void:
+	print("Attack!")
+	

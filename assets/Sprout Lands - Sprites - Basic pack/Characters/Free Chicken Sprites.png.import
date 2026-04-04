@@ -1,0 +1,20 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture2D"
+uid="uid://dkkk1156qulhl"
+path="res://.godot/imported/Free Chicken Sprites.png-e355cca485711419106ea6e48c23c88e.res"
+group_file="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png"
+valid=true
+[deps]
+
+
+source_file="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png"
+dest_files=["res://.godot/imported/Free Chicken Sprites.png-e355cca485711419106ea6e48c23c88e.res"]
+
+[params]
+
+atlas_file="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true
