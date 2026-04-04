@@ -11,11 +11,7 @@ config_version=5
 [application]
 
 config/name="BlasterHacks2026"
-<<<<<<< HEAD
-run/main_scene="res://Battle.tscn"
-=======
-run/main_scene="uid://dhfsnibvmy5i7"
->>>>>>> 9c568033f071b333b5e78560d8415c4b41d8f74a
+run/main_scene="uid://cj1elsv6tasqv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
