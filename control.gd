@@ -2,7 +2,6 @@ extends Control
 
 @onready var terminal = $Terminal
 @onready var user = $"/root/User"
-
 var cmdBuffer = ""
 var cmd = {}
 var ERR = "[1;31m"
@@ -15,7 +14,10 @@ var ESC = char(27)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_node("Window").visible = false
+	get_node("Terminal").visible = true
 	_initCommands()
+		
 	terminal.write(ESC + PLAYER + "Player > " + ESC + NORM)
 	terminal.data_sent.connect(_onTerminalDataSent)
 	terminal.bell.connect(_onTerminalBell)
@@ -64,10 +66,13 @@ func _initCommands() -> void:
 
 func _runHelp() -> void:
 	for c in cmd:
-		terminal.write("\n\r" + c)
+		if c != "help":
+			terminal.write("\n\r" + c)
 
 func _runSummon() -> void:
 	user._getCards()
+	get_node("Terminal").visible = false
+	get_node("Window").visible = true
 
 func _runBag() -> void:
 	var bag = user._getBag()
