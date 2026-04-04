@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://hjyjj11xhake" path="res://addons/kenney_prototype_textures/purple/texture_09.png" id="3_iyk10"]
 [ext_resource type="Texture2D" uid="uid://bn1pd8ipwg3yc" path="res://addons/kenney_prototype_textures/dark/texture_12.png" id="4_ihf0m"]
 [ext_resource type="PackedScene" uid="uid://blqkuh38g5m4m" path="res://Entities and Sprites/Player/player_character.tscn" id="5_6dmw1"]
+[ext_resource type="PackedScene" uid="uid://cop82gau1nodb" path="res://Entities and Sprites/Objects/test-dummy-interaction.tscn" id="6_7h4oy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t1nec"]
 texture = ExtResource("1_p4pqt")
@@ -16638,3 +16639,6 @@ tile_set = SubResource("TileSet_t1nec")
 
 [node name="player character" parent="." unique_id=641499653 instance=ExtResource("5_6dmw1")]
 position = Vector2(79, 117)
+
+[node name="StaticBody2D" parent="." unique_id=1673854596 instance=ExtResource("6_7h4oy")]
+position = Vector2(194, 79)

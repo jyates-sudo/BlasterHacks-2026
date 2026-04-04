@@ -20,4 +20,4 @@ shape = SubResource("CircleShape2D_5up26")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=686921477]
 
 [node name="Interacting" parent="." unique_id=672020759 instance=ExtResource("3_wee52")]
-position = Vector2(0, -11)
+position = Vector2(-1, -11)
