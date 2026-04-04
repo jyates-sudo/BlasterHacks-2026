@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/termdot/termdot/master/src/resources/termdot_icon.png" alt="Termdot Grey Icon" />
+	<img src="https://raw.githubusercontent.com/termdot/termdot/master/src/resources/termdot_icon.png" alt="Termdot Grey Icon" />
 </p>
 
 <h1 align="center"> Termdot </h1>

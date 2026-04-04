@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cj1elsv6tasqv"]
+
+[ext_resource type="Script" uid="uid://cjfob4vbofv8p" path="res://control.gd" id="1_u8cu3"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1926889379]
+
+[node name="Control" type="Control" parent="." unique_id=1567996177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u8cu3")
+
+[node name="Terminal" type="Terminal" parent="Control" unique_id=2101510221]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
