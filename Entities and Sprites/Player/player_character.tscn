@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6pq5orpxkl4j" path="res://Entities and Sprites/Player/player_character.gd" id="1_6udhd"]
 [ext_resource type="Texture2D" uid="uid://c02gsg1f7ra7j" path="res://addons/2d_shapes/Ellipse.svg" id="2_gg5wi"]
+[ext_resource type="Texture2D" uid="uid://211i1rsj68l6" path="res://Entities and Sprites/Player/cool_smile.png" id="3_wee52"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xlmth"]
 
@@ -33,5 +34,10 @@ shape = SubResource("CircleShape2D_5up26")
 [node name="interactbox" type="CollisionShape2D" parent="Area2D" unique_id=586266384]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_xlmth")
+
+[node name="CoolSmile" type="Sprite2D" parent="." unique_id=221797459]
+position = Vector2(0, -8)
+scale = Vector2(0.15337422, 0.18162392)
+texture = ExtResource("3_wee52")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

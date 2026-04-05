@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cop82gau1nodb"]
 
-[ext_resource type="Texture2D" uid="uid://b4h3k3etgyr58" path="res://icon.svg" id="1_jlg4o"]
 [ext_resource type="Script" uid="uid://dv5esblqfiy31" path="res://Entities and Sprites/Objects/test_dummy_interaction.gd" id="1_vdu0v"]
+[ext_resource type="Texture2D" uid="uid://dp13wvb4cdbbn" path="res://assets/CatMegaFree/MochiFree/Box3.png" id="2_jlg4o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yv4mi"]
 
@@ -15,13 +15,23 @@ script = ExtResource("1_vdu0v")
 shape = SubResource("RectangleShape2D_yv4mi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1864039575]
-position = Vector2(1.9073486e-06, -1.9073486e-06)
-scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_jlg4o")
+position = Vector2(4.7683716e-07, -4.7683716e-07)
+scale = Vector2(0.62499994, 0.62499994)
+texture = ExtResource("2_jlg4o")
+hframes = 4
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1454040156]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2137798846]
 shape = SubResource("RectangleShape2D_jlg4o")
+
+[node name="Label" type="Label" parent="." unique_id=494974302]
+offset_left = -77.0
+offset_top = -68.0
+offset_right = 77.0
+offset_bottom = -19.0
+text = "Katt's box of battles
+(collide to fight)"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

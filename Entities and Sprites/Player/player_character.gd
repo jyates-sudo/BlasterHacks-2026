@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export_category("Player Stats")
-@export var MoveSpeed = 300.0
+@export var MoveSpeed = 150.0
 
 var move_direction: Vector2 = Vector2.ZERO
 
