@@ -207,20 +207,28 @@ func _get_active_monsters() -> Array[Node2D]:
 func _do_attack() -> void:
 	remaining_attacks -= 1
 	randomize()
+	var hit = get_node("AudioStreamPlayer")
+	
 	# Replace this with your real enemy damage logic.
 	var enemy_hp = get_node("../enemy")
-	var dmg = 10 * randi_range(1, 3)
+	var dmg = 15 * randi_range(1, 3)
 	enemy_hp.value -= dmg
+	if enemy_hp.value <= 0:
+		_on_enemy_defeated()
+		return
+	hit.play(0)
 	terminal.write("\n\rA summoned creature attacks the enemy for " + str(dmg) + " damage!")
 	terminal.write("\n\rAttacks remaining: " + str(remaining_attacks))
 
 	if remaining_attacks <= 0:
 		attack_mode = false
 		terminal.write("\n\rAll summoned creatures have attacked.")
+		var enemyDmg = 10 * randi_range(1,3)
+		terminal.write("\n\rEnemy Attacks for" + str(enemyDmg) + " damage!")
 
 
 func _run_run() -> void:
-	terminal.write("\n\rRun!")
+	terminal.write("\n\rNo!")
 
 func _run_exit() -> void:
 	if summon_mode:
@@ -231,3 +239,7 @@ func _run_exit() -> void:
 		terminal.write("\n\rLeaving attack menu.")
 	else:
 		terminal.write("\n\rNothing to exit from here.")
+
+func _on_enemy_defeated() -> void:
+	terminal.write("\n\rEnemy defeated!")
+	get_tree().change_scene_to_file("res://Entities and Sprites/Maps/starting_room.tscn")

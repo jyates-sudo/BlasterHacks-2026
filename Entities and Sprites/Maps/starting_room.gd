@@ -9,10 +9,8 @@ func get_room_rect() -> Rect2:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var user = get_node("/root/User")
-	if (user.init_pick == false):
-		_give_init_pick()
-		user.init_pick = true
-		print("Room global pos: ", global_position)
+	_give_init_pick()
+	print("Room global pos: ", global_position)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cjfob4vbofv8p" path="res://control.gd" id="1_u8cu3"]
 [ext_resource type="Texture2D" uid="uid://dkkk1156qulhl" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="2_lul25"]
 [ext_resource type="Texture2D" uid="uid://8d80vrf2paes" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_pjn1s"]
+[ext_resource type="AudioStream" uid="uid://ba4fmsvyhj4ka" path="res://assets/Boom.wav" id="3_egydh"]
 [ext_resource type="Texture2D" uid="uid://dmlvofmibf7u7" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="3_yflgj"]
 [ext_resource type="Texture2D" uid="uid://cngl25bip1fbw" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide_v2.png" id="4_lrdw4"]
 [ext_resource type="Texture2D" uid="uid://chq4exkjl10uh" path="res://assets/CatMegaFree/MochiFree/Idle.png" id="7_lrdw4"]
@@ -33,7 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://dlw8vplewmabv" path="res://assets/4_mon_card.tres" id="32_mappt"]
 [ext_resource type="Texture2D" uid="uid://g4ir4ys4cnb1" path="res://assets/5_mon_card.tres" id="33_tcjo8"]
 [ext_resource type="Texture2D" uid="uid://ckvlfgm2kjbug" path="res://assets/6_mon_card.tres" id="34_tcla4"]
+[ext_resource type="AudioStream" uid="uid://cubu20m44ct0t" path="res://assets/music/easybattle.wav" id="35_ssepp"]
 [ext_resource type="Texture2D" uid="uid://bmtcf2gggjnc3" path="res://assets/7_mon_card.tres" id="35_wtl1x"]
+[ext_resource type="Script" uid="uid://cinv7ajcm6cki" path="res://audio_stream_player.gd" id="36_egydh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yflgj"]
 texture = ExtResource("2_pjn1s")
@@ -1331,6 +1334,9 @@ offset_top = -216.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control" unique_id=362931566]
+stream = ExtResource("3_egydh")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=371515243]
 modulate = Color(0.87890625, 0.87890625, 0.87890625, 1)
 position = Vector2(0, -1)
@@ -1500,3 +1506,7 @@ visible = false
 position = Vector2(442.00003, 312)
 scale = Vector2(7.2391305, 8.891304)
 sprite_frames = SubResource("SpriteFrames_bgllr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1851436766]
+stream = ExtResource("35_ssepp")
+script = ExtResource("36_egydh")
