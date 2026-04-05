@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://xpgbymajnjv8"]
+
+[ext_resource type="Script" uid="uid://cxdp4nlofmcxk" path="res://Entities and Sprites/Objects/dummy_2_test.gd" id="1_6cj3f"]
+[ext_resource type="Texture2D" uid="uid://dp13wvb4cdbbn" path="res://assets/CatMegaFree/MochiFree/Box3.png" id="1_42xu6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cj3f"]
+size = Vector2(31, 33)
+
+[node name="Dummy2Test" type="Area2D" unique_id=696972027]
+collision_mask = 2
+script = ExtResource("1_6cj3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1494143603]
+position = Vector2(-0.5, -16.5)
+shape = SubResource("RectangleShape2D_6cj3f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=406508707]
+position = Vector2(0, -17)
+texture = ExtResource("1_42xu6")
+hframes = 4
+
+[node name="Label" type="Label" parent="." unique_id=363284451]
+offset_left = -97.0
+offset_top = -109.0
+offset_right = 97.0
+offset_bottom = -34.0
+text = "Press [E] or [F] to battle
+or
+Run into the cat to battle"
+horizontal_alignment = 1

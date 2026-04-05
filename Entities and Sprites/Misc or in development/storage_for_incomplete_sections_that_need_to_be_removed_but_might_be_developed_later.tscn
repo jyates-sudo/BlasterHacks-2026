@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bid6jvtg3yexc"]
+
+[ext_resource type="PackedScene" uid="uid://bjjathcxyyh3g" path="res://Interacting component.tscn" id="1_3l5yr"]
+[ext_resource type="PackedScene" uid="uid://cx1mh4nsis8e7" path="res://Player Interaction Parts/Interactable.tscn" id="2_kefhy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfqji"]
+radius = 25.019993
+
+[node name="Storage for incomplete sections that need to be removed but might be developed later" type="Node2D" unique_id=1900382290]
+
+[node name="PlyrInteract" type="Node2D" parent="." unique_id=569224839]
+
+[node name="Interacting" parent="PlyrInteract" unique_id=672020759 instance=ExtResource("1_3l5yr")]
+position = Vector2(0, -11)
+
+[node name="DmyInteract" type="Node2D" parent="." unique_id=1262268759]
+
+[node name="Interactable" parent="DmyInteract" unique_id=2075725783 instance=ExtResource("2_kefhy")]
+visible = false
+position = Vector2(0, 22)
+collision_layer = 0
+collision_mask = 2
+interact_name = "Start Battle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DmyInteract/Interactable" unique_id=1929061199]
+visible = false
+shape = SubResource("CircleShape2D_vfqji")

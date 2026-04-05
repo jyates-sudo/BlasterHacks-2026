@@ -2,22 +2,36 @@
 
 [ext_resource type="Script" uid="uid://b6pq5orpxkl4j" path="res://Entities and Sprites/Player/player_character.gd" id="1_6udhd"]
 [ext_resource type="Texture2D" uid="uid://c02gsg1f7ra7j" path="res://addons/2d_shapes/Ellipse.svg" id="2_gg5wi"]
-[ext_resource type="PackedScene" uid="uid://bjjathcxyyh3g" path="res://Interacting component.tscn" id="3_wee52"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlmth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5up26"]
+radius = 8.0
 
-[node name="player character" type="CharacterBody2D" unique_id=641499653]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlmth"]
+radius = 16.0
+
+[node name="player character" type="CharacterBody2D" unique_id=641499653 groups=["Player"]]
 script = ExtResource("1_6udhd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073737422]
-position = Vector2(1, -11)
+[node name="Ellipse" type="Sprite2D" parent="." unique_id=404959778]
+position = Vector2(0, -8)
 texture = ExtResource("2_gg5wi")
 
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1258702539]
+position = Vector2(1, -11)
+sprite_frames = SubResource("SpriteFrames_xlmth")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1436942136]
-position = Vector2(0, -11)
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_5up26")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=686921477]
 
-[node name="Interacting" parent="." unique_id=672020759 instance=ExtResource("3_wee52")]
-position = Vector2(0, -11)
+[node name="Area2D" type="Area2D" parent="." unique_id=965056052]
+
+[node name="interactbox" type="CollisionShape2D" parent="Area2D" unique_id=586266384]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_xlmth")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

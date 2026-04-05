@@ -14,3 +14,8 @@ func Player_base_movement() -> void:
 	var motion: Vector2 = move_direction.normalized() * MoveSpeed
 	set_velocity(motion)
 	move_and_slide()
+	
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent().name.begins_with("test_dummy_interaction"):
+		get_tree().change_scene_to_file("res://Battle.tscn")

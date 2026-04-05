@@ -28,6 +28,15 @@ project/assembly_name="BlasterHacks2026"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/2d_shapes/plugin.cfg", "res://addons/godot_xterm/plugin.cfg")
+
+[global_group]
+
+Player=""
+Enemy=""
+
 [input]
 
 Player_move_up={
