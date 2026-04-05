@@ -25,6 +25,15 @@
 [ext_resource type="Texture2D" uid="uid://bbglkgrdy0rki" path="res://assets/MinifolksForestAnimals/Outline/MiniDeer2.png" id="19_kfd4w"]
 [ext_resource type="Texture2D" uid="uid://t113yse7vj5i" path="res://assets/MinifolksForestAnimals/Outline/MiniFox.png" id="20_4oa5k"]
 [ext_resource type="Texture2D" uid="uid://chv0cwsg3dx8" path="res://assets/MinifolksForestAnimals/Outline/MiniWolf.png" id="21_hsmum"]
+[ext_resource type="Script" uid="uid://btetpxijtx2dj" path="res://progress_bar.gd" id="26_subic"]
+[ext_resource type="Script" uid="uid://d3y20ukhcjmgh" path="res://player.gd" id="27_kfd4w"]
+[ext_resource type="Texture2D" uid="uid://b6lx2d4332hf1" path="res://assets/1_mon_card.tres" id="29_eg0gl"]
+[ext_resource type="Texture2D" uid="uid://d12l53mqrdiuv" path="res://assets/2_mon_card.tres" id="30_ssepp"]
+[ext_resource type="Texture2D" uid="uid://8lxxv511tw61" path="res://assets/3_mon_card.tres" id="31_egydh"]
+[ext_resource type="Texture2D" uid="uid://dlw8vplewmabv" path="res://assets/4_mon_card.tres" id="32_mappt"]
+[ext_resource type="Texture2D" uid="uid://g4ir4ys4cnb1" path="res://assets/5_mon_card.tres" id="33_tcjo8"]
+[ext_resource type="Texture2D" uid="uid://ckvlfgm2kjbug" path="res://assets/6_mon_card.tres" id="34_tcla4"]
+[ext_resource type="Texture2D" uid="uid://bmtcf2gggjnc3" path="res://assets/7_mon_card.tres" id="35_wtl1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yflgj"]
 texture = ExtResource("2_pjn1s")
@@ -1217,6 +1226,89 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_71vem"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mk7jo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_eg0gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_eg0gl")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+script = SubResource("GDScript_71vem")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ushw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ssepp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjl21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_egydh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vox2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_mappt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_834i8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_tcjo8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6f855"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_tcla4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgllr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_wtl1x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1926889379]
 script = ExtResource("1_mhipf")
 
@@ -1238,16 +1330,6 @@ anchor_bottom = 1.0
 offset_top = -216.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="Window" type="Window" parent="Control" unique_id=1997789010]
-transparent_bg = true
-snap_2d_transforms_to_pixel = true
-snap_2d_vertices_to_pixel = true
-oversampling_override = 1.0
-position = Vector2i(8, 30)
-size = Vector2i(1136, 400)
-unresizable = true
-transparent = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=371515243]
 modulate = Color(0.87890625, 0.87890625, 0.87890625, 1)
@@ -1353,3 +1435,68 @@ scale = Vector2(17.875, 15.3125)
 sprite_frames = SubResource("SpriteFrames_m3gpi")
 frame_progress = 0.92652446
 flip_h = true
+
+[node name="enemy" type="ProgressBar" parent="." unique_id=534275476]
+offset_left = 896.0
+offset_top = 16.0
+offset_right = 1138.0
+offset_bottom = 43.0
+show_percentage = false
+script = ExtResource("26_subic")
+
+[node name="player" type="ProgressBar" parent="." unique_id=29673712]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1138.0
+offset_top = 397.0
+offset_right = -896.0
+offset_bottom = 424.0
+grow_horizontal = 0
+show_percentage = false
+script = ExtResource("27_kfd4w")
+
+[node name="1" type="AnimatedSprite2D" parent="." unique_id=1514496126]
+visible = false
+position = Vector2(53.999996, 46)
+scale = Vector2(5.4565215, 3.62)
+sprite_frames = SubResource("SpriteFrames_mk7jo")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.9190048
+
+[node name="2" type="AnimatedSprite2D" parent="." unique_id=633132873]
+visible = false
+position = Vector2(208.99998, 183)
+scale = Vector2(4.85, 4.3)
+sprite_frames = SubResource("SpriteFrames_8ushw")
+
+[node name="3" type="AnimatedSprite2D" parent="." unique_id=586910272]
+visible = false
+position = Vector2(81, 128)
+scale = Vector2(6.6904764, 5.4)
+sprite_frames = SubResource("SpriteFrames_gjl21")
+
+[node name="4" type="AnimatedSprite2D" parent="." unique_id=1892995014]
+visible = false
+position = Vector2(100, 277)
+scale = Vector2(7.4833336, 11.93421)
+sprite_frames = SubResource("SpriteFrames_vox2w")
+
+[node name="5" type="AnimatedSprite2D" parent="." unique_id=1639749839]
+visible = false
+position = Vector2(264, 261)
+scale = Vector2(9.973684, 7.3461537)
+sprite_frames = SubResource("SpriteFrames_834i8")
+
+[node name="6" type="AnimatedSprite2D" parent="." unique_id=326268024]
+visible = false
+position = Vector2(274, 345)
+scale = Vector2(4.583334, 4.4264703)
+sprite_frames = SubResource("SpriteFrames_6f855")
+
+[node name="7" type="AnimatedSprite2D" parent="." unique_id=829902968]
+visible = false
+position = Vector2(442.00003, 312)
+scale = Vector2(7.2391305, 8.891304)
+sprite_frames = SubResource("SpriteFrames_bgllr")

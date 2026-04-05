@@ -11,13 +11,21 @@ config_version=5
 [application]
 
 config/name="BlasterHacks2026"
-run/main_scene="uid://dhfsnibvmy5i7"
+run/main_scene="uid://dt4lytywvr0d4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 User="*uid://bg4wbslb86b45"
+
+[display]
+
+window/size/viewport_width=1150
+window/size/viewport_height=675
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 

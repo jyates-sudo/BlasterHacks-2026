@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://do6qtloi6m6nx"]
+
+[ext_resource type="Texture2D" uid="uid://bp60qexlu0sp" path="res://Entities and Sprites/pokemon/Mon 52 mons - Free Front & back.png" id="1_ky2rh"]
+
+[resource]
+atlas = ExtResource("1_ky2rh")
+region = Rect2(107, 17, 13, 15)

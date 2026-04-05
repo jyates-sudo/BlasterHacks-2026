@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bmtcf2gggjnc3"]
+
+[ext_resource type="Texture2D" uid="uid://dhj5fmhj8abe" path="res://assets/Free ver 2/Mons 24(v2) base spritesheet.png" id="1_nw3rw"]
+
+[resource]
+atlas = ExtResource("1_nw3rw")
+region = Rect2(96, 24, 23, 23)
